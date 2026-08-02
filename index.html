@@ -1,399 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Support and product information for Passport or ID Photo Maker for iPhone.">
-  <meta name="theme-color" content="#6d3bd1">
-  <title>Passport or ID Photo Maker</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --background: #f7f5fb;
-      --surface: rgba(255, 255, 255, 0.88);
-      --text: #241b2b;
-      --muted: #6e6475;
-      --border: rgba(52, 36, 65, 0.12);
-      --accent: #6d3bd1;
-      --accent-dark: #4e24a6;
-      --accent-soft: #eee7fb;
-      --success: #087b50;
-      --shadow: 0 20px 60px rgba(58, 35, 75, 0.12);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>Privacy Policy · Passport Photo Maker</title>
+    <style>
+        :root {
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+            --ink: #111827;
+            --muted: #4B5563;
+            --border: #E5E7EB;
+            --accent: #4F46E5;
+            --surface: #FFFFFF;
+            --page: #F3F4F6;
+        }
 
-    * { box-sizing: border-box; }
+        * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            background: var(--page);
+            color: var(--ink);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 15% 5%, rgba(155, 109, 255, 0.20), transparent 33rem),
-        radial-gradient(circle at 92% 20%, rgba(255, 193, 113, 0.18), transparent 27rem),
-        var(--background);
-      line-height: 1.6;
-    }
+        .page {
+            width: min(100%, 680px);
+            min-height: 100dvh;
+            margin: 0 auto;
+            padding: calc(var(--safe-top) + 20px) 22px calc(var(--safe-bottom) + 40px);
+            background: var(--surface);
+        }
 
-    a { color: var(--accent); }
+        .back-link {
+            display: inline-flex;
+            min-height: 44px;
+            align-items: center;
+            color: var(--accent);
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+        }
 
-    a:hover { color: var(--accent-dark); }
-
-    .container {
-      width: min(1080px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 24px 0;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text);
-      font-weight: 800;
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-mark {
-      display: grid;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border-radius: 13px;
-      color: white;
-      background: linear-gradient(145deg, #9c68fa, #5c2bbd);
-      box-shadow: 0 10px 24px rgba(93, 43, 189, 0.28);
-    }
-
-    nav { display: flex; gap: 20px; }
-
-    nav a {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 650;
-      text-decoration: none;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-      gap: 48px;
-      align-items: center;
-      padding: 76px 0 88px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      padding: 6px 11px;
-      border-radius: 999px;
-      color: var(--accent-dark);
-      background: var(--accent-soft);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 760px;
-      margin: 20px 0;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -0.065em;
-    }
-
-    .hero-copy {
-      max-width: 670px;
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(18px, 2.2vw, 22px);
-    }
-
-    .hero-card,
-    .card {
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .hero-card { padding: 28px; }
-
-    .hero-card h2 { margin-top: 0; }
-
-    .checklist {
-      display: grid;
-      gap: 14px;
-      padding: 0;
-      margin: 22px 0 0;
-      list-style: none;
-    }
-
-    .checklist li {
-      display: grid;
-      grid-template-columns: 24px 1fr;
-      gap: 10px;
-      align-items: start;
-      color: var(--muted);
-    }
-
-    .checklist li::before {
-      content: "✓";
-      display: grid;
-      width: 22px;
-      height: 22px;
-      place-items: center;
-      border-radius: 50%;
-      color: var(--success);
-      background: rgba(8, 123, 80, 0.11);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    section { padding: 30px 0 72px; }
-
-    .section-heading {
-      max-width: 670px;
-      margin-bottom: 26px;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 8px;
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-    }
-
-    .section-heading p { margin: 0; color: var(--muted); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      padding: 24px;
-      box-shadow: 0 12px 36px rgba(58, 35, 75, 0.07);
-    }
-
-    .card h3 { margin: 0 0 8px; font-size: 18px; }
-
-    .card p { margin: 0; color: var(--muted); }
-
-    .steps { counter-reset: steps; }
-
-    .steps .card { position: relative; padding-top: 68px; }
-
-    .steps .card::before {
-      counter-increment: steps;
-      content: counter(steps);
-      position: absolute;
-      top: 22px;
-      left: 24px;
-      display: grid;
-      width: 32px;
-      height: 32px;
-      place-items: center;
-      border-radius: 10px;
-      color: white;
-      background: var(--accent);
-      font-weight: 800;
-    }
-
-    .support-panel {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: center;
-      padding: 34px;
-    }
-
-    .support-panel h2 { margin: 0 0 8px; }
-
-    .support-panel p { margin: 0; color: var(--muted); }
-
-    .button {
-      display: inline-flex;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 20px;
-      border-radius: 14px;
-      color: white;
-      background: var(--accent);
-      font-weight: 750;
-      text-decoration: none;
-      box-shadow: 0 10px 22px rgba(93, 43, 189, 0.22);
-    }
-
-    .button:hover { color: white; background: var(--accent-dark); }
-
-    .privacy-note {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-left: 4px solid var(--accent);
-      border-radius: 4px 14px 14px 4px;
-      color: var(--muted);
-      background: var(--accent-soft);
-    }
-
-    footer {
-      padding: 32px 0 46px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .footer-links { display: flex; gap: 16px; }
-
-    @media (max-width: 780px) {
-      nav { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 48px 0 62px; }
-      .grid { grid-template-columns: 1fr; }
-      .support-panel { grid-template-columns: 1fr; }
-      .button { width: 100%; }
-      .footer-row { flex-direction: column; }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #120f15;
-        --surface: rgba(31, 26, 35, 0.88);
-        --text: #f7f3fa;
-        --muted: #b8aebe;
-        --border: rgba(255, 255, 255, 0.10);
-        --accent: #b289ff;
-        --accent-dark: #c8aaff;
-        --accent-soft: rgba(178, 137, 255, 0.13);
-        --success: #64d8aa;
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-      }
-
-      body {
-        background:
-          radial-gradient(circle at 15% 5%, rgba(133, 80, 230, 0.18), transparent 33rem),
-          radial-gradient(circle at 92% 20%, rgba(164, 104, 41, 0.13), transparent 27rem),
-          var(--background);
-      }
-    }
-  </style>
+        h1 { margin: 12px 0 4px; font-size: clamp(27px, 6vw, 36px); line-height: 1.15; }
+        h2 { margin: 28px 0 8px; font-size: 18px; line-height: 1.3; }
+        p, li { color: var(--muted); font-size: 15px; line-height: 1.65; }
+        p { margin: 8px 0; }
+        ul { margin: 8px 0; padding-left: 22px; }
+        a { color: var(--accent); }
+        .effective { color: #6B7280; font-size: 13px; }
+        .notice { margin-top: 24px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; background: #F9FAFB; }
+    </style>
 </head>
 <body>
-  <header class="container">
-    <a class="brand" href="#top" aria-label="Passport or ID Photo Maker home">
-      <span class="brand-mark" aria-hidden="true">ID</span>
-      <span>Passport or ID Photo Maker</span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="#features">Features</a>
-      <a href="#help">How it works</a>
-      <a href="#support">Support</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </header>
+    <main class="page">
+        <a class="back-link" href="./index.html" aria-label="Return to Passport Photo Maker">← Back to app</a>
+        <h1>Privacy Policy</h1>
+        <p class="effective">Effective July 19, 2026</p>
 
-  <main id="top">
-    <section class="hero container">
-      <div>
-        <span class="eyebrow">Made for iPhone</span>
-        <h1>Prepare an ID photo with confidence.</h1>
-        <p class="hero-copy">Choose a document format, frame your photo with guided tools, review helpful checks, and export a properly sized image from your iPhone.</p>
-      </div>
-      <aside class="hero-card" aria-label="App highlights">
-        <h2>Simple, guided preparation</h2>
-        <ul class="checklist">
-          <li>Passport and identification photo formats</li>
-          <li>Framing, zoom, rotation, and crop controls</li>
-          <li>On-device face positioning guidance</li>
-          <li>Optional background removal</li>
-          <li>No account or advertising trackers</li>
+        <p>Passport Photo Maker helps you position, prepare, and save passport and document photos. This policy explains how the app handles your information.</p>
+
+        <h2>Photos you select or take</h2>
+        <p>Photos you select from your library or take with the camera are loaded into the app so you can position, crop, and export them. Face positioning is performed within the app after its face-detection resources have loaded.</p>
+
+        <h2>Optional background removal</h2>
+        <p>Background removal is optional. The editor identifies the current processing service next to the Remove background button. Tapping that button sends the selected photo to the displayed service over an encrypted HTTPS connection for processing; there is no separate confirmation dialog. The processed image is then returned to the app. Do not tap Remove background if you do not want the photo transmitted to the displayed service.</p>
+
+        <h2>Device permissions</h2>
+        <p>The app requests access only when needed:</p>
+        <ul>
+            <li>Camera access lets you take a new photo.</li>
+            <li>Photo Library access lets you choose an existing photo.</li>
+            <li>Add Photos access lets you save a finished image to your library.</li>
         </ul>
-      </aside>
-    </section>
+        <p>You can change these permissions in iOS or Android Settings.</p>
 
-    <section class="container" id="features">
-      <div class="section-heading">
-        <h2>Everything needed to prepare your photo</h2>
-        <p>Purpose-built tools help you create a clean, correctly sized image without a complicated editing workflow.</p>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3>Guided framing</h3>
-          <p>Position, zoom, rotate, and crop your photo against the selected document format.</p>
-        </article>
-        <article class="card">
-          <h3>Helpful photo checks</h3>
-          <p>Review automated guidance for alignment, pose, and image quality before exporting.</p>
-        </article>
-        <article class="card">
-          <h3>Easy export</h3>
-          <p>Save the finished image to your Photo Library for printing or digital submission.</p>
-        </article>
-      </div>
-    </section>
+        <h2>Information stored on your device</h2>
+        <p>The app may store preferences such as your selected document type and background-removal engine. If you make adjustments, it also keeps one unfinished photo draft in the app's private local storage so your work can be restored after an interruption. The draft is removed when you save or discard it and expires after seven days. The current app does not include user accounts or advertising trackers.</p>
 
-    <section class="container" id="help">
-      <div class="section-heading">
-        <h2>How it works</h2>
-      </div>
-      <div class="grid steps">
-        <article class="card">
-          <h3>Select a format</h3>
-          <p>Choose the passport or identification document you are preparing.</p>
-        </article>
-        <article class="card">
-          <h3>Add your photo</h3>
-          <p>Take a new photo or select an existing image from your Photo Library.</p>
-        </article>
-        <article class="card">
-          <h3>Adjust and export</h3>
-          <p>Use the framing tools, review the guidance, and save your finished photo.</p>
-        </article>
-      </div>
-      <p class="privacy-note"><strong>Privacy note:</strong> Face positioning guidance runs on your device. Background removal is optional and sends the selected photo over HTTPS to the processing service identified in the app.</p>
-    </section>
+        <h2>Face guidance</h2>
+        <p>The face-detection model used for positioning and automated guidance is bundled with the app and runs on your device. Automated guidance is an estimate and does not guarantee that a government authority will accept a photo.</p>
 
-    <section class="container" id="support">
-      <div class="card support-panel">
-        <div>
-          <h2>Need help?</h2>
-          <p>For app support, privacy questions, or feedback, email us. Please describe what you were doing and include your iPhone and iOS version when reporting a problem. Do not email passport photos or other sensitive documents.</p>
+        <h2>Your choices</h2>
+        <p>You can avoid photo transmission by not using optional background removal. You can remove an unfinished draft by returning to photo selection and choosing to discard it. Clearing the app's data or uninstalling it removes all locally stored app information.</p>
+
+        <h2>Contact</h2>
+        <p>For privacy questions, email <a href="mailto:privacy@uppal.net">privacy@uppal.net</a>.</p>
+
+        <div class="notice">
+            <strong>Independent service</strong>
+            <p>Passport Photo Maker is an independent utility and is not affiliated with, endorsed by, or operated by any government agency. Government authorities make the final decision on photo acceptance.</p>
         </div>
-        <a class="button" href="mailto:privacy@uppal.net?subject=Passport%20or%20ID%20Photo%20Maker%20Support">Email support</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
-      <span>© 2026 Raja Uppal. All rights reserved.</span>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="mailto:privacy@uppal.net?subject=Passport%20or%20ID%20Photo%20Maker%20Support">Support</a>
-      </div>
-    </div>
-    <div class="container">
-      <p>Passport or ID Photo Maker is an independent utility and is not affiliated with, endorsed by, or operated by any government agency. Automated guidance does not guarantee acceptance by an issuing authority. Always verify current requirements with the appropriate authority.</p>
-    </div>
-  </footer>
+    </main>
 </body>
 </html>
